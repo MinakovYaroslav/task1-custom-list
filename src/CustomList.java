@@ -79,8 +79,6 @@ public class CustomList {
 
     @Override
     public String toString() {
-        int[] list = new int[size];
-        System.arraycopy(elements, 0, list, 0, size);
-        return Arrays.toString(list);
+        return Arrays.toString(elements);
     }
 }
