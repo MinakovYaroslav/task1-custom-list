@@ -42,25 +42,31 @@ public class CustomList {
     }
 
     @SuppressWarnings("unchecked")
-    public int get(int index) {
+    int get(int index) {
         if (index >= size || index < 0) throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
         return elements[index];
     }
 
-    public int min() {
-        Integer[] list = new Integer[size];
-        for (int i = 0; i < size; i++) {
-            list[i] = elements[i];
+    int min() {
+        if (elements.length == 0) throw new IllegalStateException("List is empty");
+        int e = elements[0];
+        if (size > 1) {
+            for (int i = 1; i < size; i++) {
+                e = e < elements[i] ? elements[i] : e;
+            }
         }
-        return Collections.min(Arrays.asList(list));
+        return e;
     }
 
-    public int max() {
-        Integer[] list = new Integer[size];
-        for (int i = 0; i < size; i++) {
-            list[i] = elements[i];
+    int max() {
+        if (elements.length == 0) throw new IllegalStateException("List is empty");
+        int e = elements[0];
+        if (size > 1) {
+            for (int i = 1; i < size; i++) {
+                e = e > elements[i] ? elements[i] : e;
+            }
         }
-        return Collections.max(Arrays.asList(list));
+        return e;
     }
 
     public double avg() {
