@@ -39,7 +39,6 @@ public class IncrementalArrayList {
         elements = Arrays.copyOf(elements, elements.length * 2);
     }
 
-    @SuppressWarnings("unchecked")
     int get(int index) {
         if (index >= size || index < 0) throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
         return elements[index];
