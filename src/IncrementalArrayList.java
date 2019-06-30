@@ -45,7 +45,7 @@ public class IncrementalArrayList {
     }
 
     int min() {
-        if (elements.length == 0) throw new IllegalStateException("List is empty");
+        if (size == 0) throw new IllegalStateException("List is empty");
         int e = elements[0];
         if (size > 1) {
             for (int i = 1; i < size; i++) {
