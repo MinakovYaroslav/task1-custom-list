@@ -2,7 +2,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        CustomList list = new CustomList();
+        IncrementalArrayList list = new IncrementalArrayList();
 
         //Add elements
         list.add(1);

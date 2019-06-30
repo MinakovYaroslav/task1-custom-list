@@ -1,17 +1,17 @@
 import java.util.Arrays;
 import java.util.Collections;
 
-public class CustomList {
+public class IncrementalArrayList {
 
     private int size = 0;
     private static final int DEFAULT_CAPACITY = 10;
     private int[] elements;
 
-    public CustomList() {
+    IncrementalArrayList() {
         this.elements = new int[DEFAULT_CAPACITY];
     }
 
-    public boolean add(Integer e) {
+    boolean add(Integer e) {
         if (e == null) {
             return false;
         }
@@ -25,7 +25,7 @@ public class CustomList {
         return true;
     }
 
-    public boolean remove(int index) {
+    void remove(int index) {
         if (index >= size || index < 0) throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
         int element = elements[index];
         int numElts = elements.length - (index + 1);
@@ -34,7 +34,6 @@ public class CustomList {
         for (int i = 0; i < size; i++) {
             elements[i] -= element;
         }
-        return true;
     }
 
     private void ensureCapacity() {
@@ -69,7 +68,7 @@ public class CustomList {
         return e;
     }
 
-    public double avg() {
+    double avg() {
         double avg = 0.0;
         for (int i = 0; i < size; i++) {
             avg += elements[i];
