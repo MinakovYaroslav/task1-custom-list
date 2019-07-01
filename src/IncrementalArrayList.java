@@ -10,6 +10,8 @@ public class IncrementalArrayList {
         this.elements = new int[DEFAULT_CAPACITY];
     }
 
+    IncrementalArrayList(int capacity) { this.elements = new int[capacity]; }
+
     boolean add(Integer e) {
         if (e == null) {
             return false;
